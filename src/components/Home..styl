@@ -1,0 +1,244 @@
+.home
+  width:1200px
+  margin:0 auto
+  .mag-down
+    color green
+  .mag-up
+    color red
+  .nav
+    line-height 70px
+    height 70px
+  .nav,
+  .contain-style
+    display flex
+    justify-content space-between
+    align-content center
+    padding 0 45px
+    background #fff
+    box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
+
+    & > div.nav-name
+      font-size:24px
+
+    & > div.nav-button
+      & > span
+        cursor pointer
+        margin-right 10px
+      & > span:last-child
+        margin-right 0
+
+  .home-search
+    line-height 70px
+    height 70px
+    margin-top:20px
+    background #fff
+    padding 0 45px
+    box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
+
+    & > div
+      line-height 70px
+
+    & > div.home-search-name
+      width 150px
+      & img
+        position relative
+        top 15px
+    & > div.home-search-input
+      flex 5
+      & input
+        width 100%
+        border: 1px solid #719cfd
+        outline none
+        height 48px
+        padding-left 20px
+
+    & > div:last-child
+      width 275px
+      text-align right
+      & span
+        padding 12px 20px 13px 20px
+        border 1px solid #1ca0f0
+        margin-left 25px
+        cursor pointer
+      & span.search-baidu
+        background #1ca0f0
+        color #fff
+
+
+  .home-coin-list
+    overflow hidden
+    justify-content space-around
+    margin-top 20px
+    line-height 70px
+    position relative
+    height 70px
+
+    & .recommend-style
+      width 25px
+      height 51px
+      background #1CA0F0
+      position absolute
+      line-height 21px
+      text-align center
+      padding-top 3px
+      color #fff
+      top 10px
+      left 0
+      border-top-right-radius 5px
+      border-bottom-right-radius 5px
+
+    & .recommend-item
+      & a
+        color #282828
+        font-weight 900
+    & .home-coin-content
+      display flex
+      justify-content space-between
+      flex-wrap wrap
+
+    & .home-coin-item
+      margin-right 15px
+      & .home-coin-item-name
+        font-weight 900
+        margin-right 10px
+
+      & .home-coin-item-price
+        margin-right
+
+  .section
+    margin-top 20px
+    height auto
+    padding 0
+    background none
+    box-shadow none
+    & .section-left
+      width 800px
+      margin-right 20px
+
+      & .section-container
+        display block
+        padding 0 45px
+        padding-bottom  20px
+        background none
+        box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
+        margin-bottom 20px
+
+        & .section-container-title
+          font-size 18px
+          margin-bottom 20px
+          width 100%
+          font-weight 900
+          color #1ca0f0
+          height 50px
+          line-height 50px
+          border-bottom 1px solid #f0f0f0
+
+        & .search-title
+          color #282828
+
+        & .section-container-content
+          display flex
+          flex-wrap wrap
+          & a
+            width 115px
+            overflow: hidden;
+            text-overflow:ellipsis;
+            color #282828;
+            white-space: nowrap;
+            padding 5px
+
+          & a:hover
+            color red
+
+          & a.btn-style
+            display none;
+
+        & .section-container-more
+          margin-top 10px
+          & button
+            width 100%
+            border-radius 0
+          & button:hover
+            color #fff
+            background #1ca0f0
+
+    & .section-right
+      & .section-right-item
+        margin-bottom 20px
+        width 400px
+        padding 0 25px
+        background #fff
+        box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
+      & .section-right-title
+        font-size 18px
+        margin-bottom 10px
+        width 100%
+        font-weight 900
+        color #1ca0f0
+        height 50px
+        line-height 50px
+        border-bottom 1px solid #f0f0f0
+
+      & .section-right-name
+        & span
+          display inline-block
+          width:84px
+          height 40px
+          text-align center
+          line-height 40px
+          padding 0 10px
+          cursor pointer
+
+        & span.active
+          background #1ca0f0
+          color #fff
+
+        & .section-right-new-title
+          font-weight 900
+          margin-top 10px
+          line-height 20px
+
+        & .section-right-new-context
+          color #808080
+          word-wrap:break-word;
+          overflow:hidden;
+          padding 15px 0
+          line-height 20px
+
+        & .section-right-new-date
+          text-align right
+          padding-bottom 10px
+          border-bottom 1px solid #f0f0f0
+
+      & .section-right-context
+        margin-top 10px
+        height 275px
+        overflow auto
+        & .section-right-context-item
+          display flex
+          padding 10px 0
+          border-bottom 1px solid #f0f0f0
+
+          & .section-right-context-img
+            text-align center
+            margin-right 10px
+            width 40px
+            height 40px
+            line-height 40px
+
+            & img
+              display inline-block
+              vertical-align middle;
+          & .section-right-context-text
+            line-height 20px
+            & p:first-child
+              font-size 16px
+
+              & a
+                font-weight 900
+                color #282828
+            & p:last-child
+              font-size 12px
+
+
+
