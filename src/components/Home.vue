@@ -46,15 +46,15 @@
         <div class="section-container" v-for="(v, k) in blockList" :key="k">
           <div class="section-container-title">{{v.name}}</div>
           <div class="section-container-content">
-            <a  v-if="j < 29" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
+            <a  v-if="j < 23" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
               {{i.name}}
             </a>
-            <a  v-if="j >= 29 && showMore === k" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
+            <a  v-if="j >= 23 && showMore === k" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
               {{i.name}}
             </a>
           </div>
           <div class="section-container-more">
-            <el-button style="padding:4px 20px;" @click="moreHandler(k)">{{showMore === k ? '收起' : '更多'}}<i :class="showMore === k ? 'el-icon-arrow-up' : 'el-icon-arrow-down'" class="el-icon--down"></i></el-button>
+            <el-button v-show="v.content.length >= 24" style="padding:4px 20px;" @click="moreHandler(k)">{{showMore === k ? '收起' : '更多'}}<i :class="showMore === k ? 'el-icon-arrow-up' : 'el-icon-arrow-down'" class="el-icon--down"></i></el-button>
           </div>
         </div>
       </div>
@@ -70,7 +70,18 @@
       </div>
       <div class="section-right">
         <div class="section-right-item">
-          <div class="section-right-title">App推荐</div>
+          <div class="section-right-title">App推荐
+            <el-button v-popover:popover1 style="color:#909090;padding:0;border:0;" class="el-icon-question">
+              <i class=""></i>
+            </el-button>
+            <el-popover
+              ref="popover1"
+              placement="bottom-start"
+              width="200"
+              trigger="hover"
+              content="本站点暂不提供App下载,点击App可跳转至对应官网进行下载">
+            </el-popover>
+          </div>
           <div class="section-right-name">
           <span @click="appIndex = k" :class="appIndex === k && 'active'" v-for="(v,k) in appList"
                 :key="k">{{v.name}}</span>
@@ -80,23 +91,25 @@
               <div class="section-right-context-img">
                 <img :src="i.src" alt="">
               </div>
-              <div class="section-right-context-text">
+              <div class="section-right-context-text" :title="i.des">
                 <p>
                   <a target="_blank" :href="i.url">{{i.title}}</a>
                 </p>
-                <p>{{i.des}}</p>
+                <p >{{i.des}}</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="section-right-item">
+        <div class="section-right-item section-right-news" v-if="newsList">
           <div class="section-right-title">快讯</div>
-          <div class="section-right-name" v-for="(v, k) in newList" :key="k">
-            <h2 class="section-right-new-title">{{v.title}}</h2>
-            <p class="section-right-new-context">
-              {{v.content}}
-            </p>
-            <div class="section-right-new-date">{{v.time}}</div>
+          <div class="section-right-title2">
+            <div  class="section-right-name" v-for="(v, k) in newsList.buttom" :key="k">
+              <h2  class="section-right-new-title" :title="v.title">{{v.title}}</h2>
+              <p  class="section-right-new-context">
+                {{v.content}}
+              </p>
+              <div  class="section-right-new-date">{{newsList.date}}</div>
+            </div>
           </div>
         </div>
       </div>
@@ -111,6 +124,7 @@
     name: 'Home',
     data() {
       return {
+        popover1: false,
         appList: [
           {
             name: '交易所',
@@ -125,13 +139,13 @@
                 title: '火币pro',
                 url: 'https://huobiglobal.zendesk.com/hc/zh-cn/articles/360002190292',
                 des: '通过C2C渠道完成 人民币入金出金，新币多。',
-                src: 'https://s7.postimg.cc/3zmezwksb/huobi.png'
+                src: 'https://s14.postimg.cc/4offviztt/-_pro.png'
               },
               {
                 title: 'Gate.io',
                 url: 'https://gateio.io/mobileapp',
                 des: '比特儿的海外版，通过C2C渠道完成法币入金出金，币种丰富',
-                src: 'https://s7.postimg.cc/5enzome5n/gateio.png'
+                src: 'https://s14.postimg.cc/d6ovzve29/gateio.io.png'
               },
               {
                 title: 'OKEX',
@@ -189,25 +203,31 @@
               {
                 title: 'Copay ',
                 url: 'https://copay.io/',
-                des: 'https://copay.io/',
-                src: 'https://s7.postimg.cc/646s0yc4b/copay.png'
+                des: '支持多重签名的开源数字钱包',
+                src: 'https://s14.postimg.cc/hftm211w1/image.png'
               },
               {
                 title: 'Jaxx ',
-                url: 'https://bitpay.com/',
-                des: 'https://bitpay.com/',
-                src: 'https://s7.postimg.cc/l05b8lkyz/jaxx.png'
+                url: 'https://jaxx.io/',
+                des: '支持全平台的多币种数字资产钱包应用',
+                src: 'https://s14.postimg.cc/wojjftqfl/-jaxx.png'
               },
               {
                 title: 'BlockChain',
                 url: 'https://blockchain.info/wallet/#/',
-                des: 'https://blockchain.info/wallet/#/',
+                des: '全球最早且受欢迎的数字钱包之一',
                 src: 'https://s7.postimg.cc/x20p2o9m3/blockchain.png'
+              },
+              {
+                title: 'BitPay',
+                url: 'https://bitpay.com/',
+                des: '最大的数字货币支付钱包软件之一',
+                src: 'https://s14.postimg.cc/6g8eqf3r5/bitepai.png'
               },
               {
                 title: 'CoinMeet',
                 url: 'https://coinmeet.io/',
-                des: 'https://coinmeet.io/',
+                des: '集多资产轻钱包，区块链护照，数字社交等功能的软件',
                 src: 'https://s7.postimg.cc/6gy673ziz/Cion_Meet.png'
               }
             ]
@@ -218,43 +238,43 @@
               {
                 title: 'AICoin ',
                 url: 'https://www.aicoin.net.cn/app',
-                des: 'https://www.aicoin.net.cn/app',
+                des: '专业的全球数字资产行情数据应用',
                 src: 'https://s7.postimg.cc/i625v1g6z/aicoin.png'
               },
               {
                 title: '非小号',
                 url: 'https://www.feixiaohao.com/app/',
-                des: 'https://www.feixiaohao.com/app/',
+                des: '专业的数字货币行业大数据平台',
                 src: 'https://s7.postimg.cc/646s0z6zf/feixiaohao.png'
               },
               {
                 title: 'MyToken',
                 url: 'https://mytoken.io/',
-                des: 'https://mytoken.io/',
+                des: '数字资产行情应用',
                 src: 'https://s7.postimg.cc/i625v5qij/mytoken.png'
               },
               {
                 title: 'BITKAN',
                 url: 'http://www.bitkan.com/app',
-                des: 'http://www.bitkan.com/app',
+                des: '提供价格监控、新闻资讯、挖矿监控、股票监控、钱包等服务',
                 src: 'https://s7.postimg.cc/l05b8hxsr/bikan.png'
               },
               {
                 title: '金色财经',
                 url: 'https://www.jinse.com/',
-                des: 'https://www.jinse.com/',
+                des: '专注于区块链产业的服务平台，通过深度报道，传递行业声音。',
                 src: 'https://s7.postimg.cc/mf6vxabrf/gold.png'
               },
               {
                 title: '巴比特',
                 url: 'http://download.8btc.com/',
-                des: 'http://download.8btc.com/',
+                des: '国内最早的区块链资讯社区门户',
                 src: 'https://s7.postimg.cc/qoblzduff/babite.png'
               },
               {
                 title: '未来财经',
                 url: 'http://www.weilaicaijing.com/',
-                des: 'http://www.weilaicaijing.com/',
+                des: '领先的区块链垂直网络媒体平台',
                 src: 'https://s7.postimg.cc/lcwpetdjf/weilai.png'
               }
             ]
@@ -265,51 +285,31 @@
               {
                 title: 'Dapp',
                 url: 'https://www.cmcmbc.com/zh-cn/dapp-browser/',
-                des: 'https://www.cmcmbc.com/zh-cn/dapp-browser/',
+                des: '在线区块链应用专用浏览器',
                 src: 'https://s7.postimg.cc/88r521lgr/dappbrowser.png'
               },
               {
                 title: '蓝灯',
                 url: 'https://github.com/getlantern/lantern/releases/tag/latest',
-                des: 'https://github.com/getlantern/lantern/releases/tag/latest',
+                des: '你可能很需要它',
                 src: 'https://s7.postimg.cc/5rfduutvf/VPN.png'
+              },
+              {
+                title: 'Telegram ',
+                url: 'https://telegram.org/',
+                des: '全球最安全的社交即时通讯软件',
+                src: 'https://s14.postimg.cc/4offvjf9d/telegram.png'
+              },
+              {
+                title: 'BeeChat ',
+                url: 'http://beechat.io/',
+                des: '专注于区块链的即时通讯软件',
+                src: 'https://s18.postimg.cc/6e14frd7d/beechat.png'
               }
             ]
           }
         ],
         appIndex: 0,
-        newList: [
-          {
-            title: '大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;la',
-            time: '2018/04/20 14:00'
-          },
-          {
-            title: '大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;la',
-            time: '2018/04/20 14:00'
-          },
-          {
-            title: '大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;laddddddddddddddddddddd',
-            time: '2018/04/20 14:00'
-          },
-          {
-            title: '大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;la',
-            time: '2018/04/20 14:00'
-          },
-          {
-            title: '大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;la',
-            time: '2018/04/20 14:00'
-          },
-          {
-            title: '大大大大大标题大大大大大标题大大大大大标题',
-            content: 'laksdlfadks;lfaksd;lfk;aldkjs;fksdf;ladks;fjladksjf;la',
-            time: '2018/04/20 14:00'
-          }
-        ],
         recommendList: [
           {
             name: '币安',
@@ -359,11 +359,13 @@
     computed: {
       ...mapGetters({
         coinList: 'coinList',
-        blockList: 'blockList'
+        blockList: 'blockList',
+        newsList: 'newsList'
       })
     },
     mounted() {
       setInterval(this.scroll, 3000);
+      this.$store.dispatch('getNews');
     },
     watch: {
       searchTxt: 'innerSearchFun'
@@ -380,7 +382,7 @@
       scroll() {
         let con1 = this.$refs.listItem;
         let that = this;
-        con1.style.transform = 'translateY(-70px)';
+        con1.style.transform = 'translateY(-48px)';
         this.showFlag = !this.showFlag;
         setTimeout(function () {
           let arr = that.coinList.concat(that.coinList.splice(0, 4));
@@ -425,7 +427,7 @@
             this.blockList.forEach((v, k) => {
               if (v.content && v.content.length !== 0) {
                 v.content.forEach((i, j) => {
-                  if (i.name.includes(this.searchTxt)) {
+                  if (i.name.indexOf(this.searchTxt) !== -1) {
                     this.searchResult.push(i);
                     n++;
                   }

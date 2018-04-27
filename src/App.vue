@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <Home/>
+    <div style="text-align: right">
+    </div>
   </div>
 </template>
 

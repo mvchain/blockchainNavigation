@@ -34,12 +34,12 @@ const Home = {
       {
         name: 'NEO/USD',
         url: 'NEO',
-         data: {}
+        data: {}
       },
       {
         name: 'XRP/USD',
         url: 'XRP',
-         data: {}
+        data: {}
       }
     ],
     blockList: [
@@ -81,31 +81,59 @@ const Home = {
         ]
       },
       {
-        name: '数字货币',
+        name: '数字钱包',
         content: [
           {
-            name: 'BTC 比特币'
+            name: '比特派',
+            url: 'http://bitpie.com/'
           },
           {
-            name: 'ETH 以太坊'
+            name: 'imToken',
+            url: 'https://token.im/'
           },
           {
-            name: 'LTC 莱特币'
+            name: '火币钱包',
+            url: 'https://www.huobi.io/'
           },
           {
-            name: 'ETC 以太经典'
+            name: '币信',
+            url: 'https://bixin.com/'
           },
           {
-            name: 'BCH 比特现金'
+            name: 'SafeWallet',
+            url: 'https://www.cmcmbc.com/zh-cn/safe-wallet/'
           },
           {
-            name: 'XRP 瑞波币'
+            name: 'Copay ',
+            url: 'https://copay.io/'
           },
           {
-            name: 'EOS 柚子'
+            name: 'BitPay',
+            url: 'https://bitpay.com/'
           },
           {
-            name: 'NEO 小蚁'
+            name: 'BlockChain',
+            url: ' https://blockchain.info/wallet/#/'
+          },
+          {
+            name: 'Jaxx',
+            url: 'https://jaxx.io/'
+          },
+          {
+            name: 'mobi',
+            url: 'https://www.mobi.me/'
+          },
+          {
+            name: 'CoinMeet',
+            url: 'https://coinmeet.io/'
+          },
+          {
+            name: 'AToken',
+            url: 'https://www.atoken.com/'
+          },
+          {
+            name: 'KCASH',
+            url: 'https://www.kcash.com/'
           }
         ]
       },
@@ -212,10 +240,10 @@ const Home = {
       },
       {
         name: '矿池挖矿',
-        content: [
-        ]
+        content: []
       }
-    ]
+    ],
+    newsList: []
   },
 
   mutations: {
@@ -229,9 +257,9 @@ const Home = {
       state.coinList.forEach((k, v) => {
         const url = 'https://data.block.cc/api/v1/price?symbol=' + k.url;
         window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
-        q: `select * from json where url="${url}"`,
-        format: 'json'
-      }).then(function(res) {
+          q: `select * from json where url="${url}"`,
+          format: 'json'
+        }).then(function (res) {
           if (res.query) {
             if (Array.isArray(res.query.results.json.data)) {
               state.coinList[v].data = res.query.results.json.data[0];
@@ -239,8 +267,19 @@ const Home = {
               state.coinList[v].data = res.query.results.json.data;
             }
           }
-      }).catch();
+        }).catch();
       });
+    },
+    getNews: ({commit, state}, payload) => {
+      const url = 'http://www.bishijie.com/api/newsv17/index?size=10&client=pc';
+      window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
+        q: `select * from json where url="${url}"`,
+        format: 'json'
+      }).then(function (res) {
+        if (res.query) {
+          state.newsList = res.query.results.json.data;
+        }
+      }).catch();
     }
   }
 };

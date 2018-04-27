@@ -30,7 +30,7 @@
   .home-search
     line-height 70px
     height 70px
-    margin-top:20px
+    margin-top:12px
     background #fff
     padding 0 45px
     box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
@@ -68,21 +68,22 @@
   .home-coin-list
     overflow hidden
     justify-content space-around
-    margin-top 20px
-    line-height 70px
+    margin-top 12px
+    line-height 48px
     position relative
-    height 70px
+    height 48px
 
     & .recommend-style
       width 25px
-      height 51px
+      height 48px
       background #1CA0F0
       position absolute
       line-height 21px
       text-align center
       padding-top 3px
+      font-size 12px
       color #fff
-      top 10px
+      top 0
       left 0
       border-top-right-radius 5px
       border-bottom-right-radius 5px
@@ -106,22 +107,22 @@
         margin-right
 
   .section
-    margin-top 20px
+    margin-top 12px
     height auto
     padding 0
     background none
     box-shadow none
     & .section-left
-      width 800px
-      margin-right 20px
+      width 820px
+      margin-right 12px
 
       & .section-container
         display block
-        padding 0 45px
+        padding 0 24px
         padding-bottom  20px
         background none
         box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
-        margin-bottom 20px
+        margin-bottom 12px
 
         & .section-container-title
           font-size 18px
@@ -140,12 +141,20 @@
           display flex
           flex-wrap wrap
           & a
-            width 115px
+            width 112px
             overflow: hidden;
             text-overflow:ellipsis;
             color #282828;
             white-space: nowrap;
-            padding 5px
+            margin: 0 16px 24px 0
+          & a:nth-child(6n)
+            margin-right:0;
+
+          & a:nth-child(6n+1),
+          & a:nth-child(6n+2),
+          & a:nth-child(6n+3),
+          & a:nth-child(6n+4)
+            margin-bottom:0;
 
           & a:hover
             color red
@@ -165,49 +174,68 @@
     & .section-right
       & .section-right-item
         margin-bottom 20px
-        width 400px
+        width 388px
         padding 0 25px
         background #fff
         box-shadow: 0 2px 10px 2px rgba(0,0,0,.1)
+
+      & .section-right-news
+        overflow-y: auto;
+      & .section-right-title2
+        height 650px
+        overflow-y auto
+        border-top:1px solid #f0f0f0;
       & .section-right-title
         font-size 18px
-        margin-bottom 10px
         width 100%
         font-weight 900
         color #1ca0f0
         height 50px
         line-height 50px
-        border-bottom 1px solid #f0f0f0
+
 
       & .section-right-name
+        border-bottom:1px solid #f0f0f0;
+        & h2
+          font-size:16px;
         & span
           display inline-block
-          width:84px
+          width:80px
+          margin-right:6px;
           height 40px
           text-align center
           line-height 40px
           padding 0 10px
           cursor pointer
-
+          background:#f0f0f0;
+          border-top-left-radius:10px;
+          border-top-right-radius:10px;
+        & span:last-child
+          margin:0;
         & span.active
           background #1ca0f0
           color #fff
 
         & .section-right-new-title
           font-weight 900
-          margin-top 10px
+          margin-top 24px
           line-height 20px
+          overflow: hidden;
+          text-overflow:ellipsis;
+          white-space: nowrap;
 
         & .section-right-new-context
           color #808080
           word-wrap:break-word;
           overflow:hidden;
-          padding 15px 0
+          padding 12px 0
           line-height 20px
 
         & .section-right-new-date
           text-align right
-          padding-bottom 10px
+          font-size:12px;
+          color:#b7b7b7;
+          padding-bottom 18px
           border-bottom 1px solid #f0f0f0
 
       & .section-right-context
@@ -239,6 +267,11 @@
                 color #282828
             & p:last-child
               font-size 12px
+              width:275px
+              color:#808080;
+              overflow: hidden;
+              text-overflow:ellipsis;
+              white-space: nowrap;
 
 
 
