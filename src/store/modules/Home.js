@@ -492,7 +492,7 @@ const Home = {
       });
     },
     getNews: ({commit, state}, payload) => {
-      const url = 'http://www.bishijie.com/api/newsv17/index?size=10&client=pc';
+      const url = 'http://www.bishijie.com/api/newsv17/index?size=30&client=pc';
       window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
         q: `select * from json where url="${url}"`,
         format: 'json'

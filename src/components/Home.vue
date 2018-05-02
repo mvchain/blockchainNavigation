@@ -104,11 +104,11 @@
           <div class="section-right-title">快讯</div>
           <div class="section-right-title2">
             <div  class="section-right-name" v-for="(v, k) in newsList.buttom" :key="k">
-              <h2  class="section-right-new-title" :title="v.title">{{v.title | titleFilter}}</h2>
+              <h2  class="section-right-new-title" :title="v.title">{{v.title}}</h2>
               <p  class="section-right-new-context">
                 {{v.content}}
               </p>
-              <div  class="section-right-new-date">{{newsList.date}}</div>
+              <div  class="section-right-new-date">{{v.issue_time | timeFilter}}</div>
             </div>
           </div>
         </div>
@@ -372,7 +372,6 @@
     },
     methods: {
       moreHandler(k) {
-        console.log(k, this.showMore);
         if (this.showMore !== '') {
           this.showMore = '';
         } else {
