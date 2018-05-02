@@ -410,12 +410,12 @@
       saveToDesktop(fileName, data) {
         let explorer = navigator.userAgent.toLowerCase();
         if (explorer.indexOf('trident') > 0) { // IE 5+
-          let wss = new ActiveXObject('WScript.Shell');
-          let desktopUrl = wss.SpecialFolders('Desktop');
-          let fso = new ActiveXObject('Scripting.FileSystemObject');
-          let tf = fso.CreateTextFile(desktopUrl + '\\' + fileName, true);
-          tf.Write(data);
-          tf.Close();
+          // let wss = new ActiveXObject('WScript.Shell');
+          // let desktopUrl = wss.SpecialFolders('Desktop');
+          // let fso = new ActiveXObject('Scripting.FileSystemObject');
+          // let tf = fso.CreateTextFile(desktopUrl + '\\' + fileName, true);
+          // tf.Write(data);
+          // tf.Close();
         } else { // fireFox chrome
           alert('抱歉，您所使用的浏览器无法完成此操作,请手动添加快捷方式至桌面');
         }
