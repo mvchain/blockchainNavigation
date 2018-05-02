@@ -67,6 +67,18 @@ const Home = {
             url: 'https://www.bitkk.com/'
           },
           {
+            name: 'CoinEgg',
+            url: 'https://www.coinegg.com'
+          },
+          {
+            name: 'BitMEX',
+            url: 'https://www.bitmex.com/'
+          },
+          {
+            name: '币赢网',
+            url: 'https://www.coinw.me/'
+          },
+          {
             name: 'CoinBase',
             url: 'https://www.coinbase.com/'
           },
@@ -77,6 +89,74 @@ const Home = {
           {
             name: 'Bitfinex',
             url: 'https://www.bitfinex.com/'
+          },
+          {
+            name: 'B网',
+            url: 'https://bittrex.com/'
+          },
+          {
+            name: 'UPbit',
+            url: ' https://upbit.com/home'
+          },
+          {
+            name: 'OEX',
+            url: 'https://www.oex.top/'
+          },
+          {
+            name: 'DragonEX',
+            url: 'https://dragonex.im/'
+          },
+          {
+            name: 'P网',
+            url: 'https://www.poloniex.com/'
+          },
+          {
+            name: 'CEX.IO',
+            url: 'https://cex.io/'
+          },
+          {
+            name: 'OTCBTC',
+            url: 'https://otcbtc.com/'
+          },
+          {
+            name: 'RightBTC',
+            url: 'https://www.rightbtc.com'
+          },
+          {
+            name: 'LBANK',
+            url: 'https://www.lbank.info/'
+          },
+          {
+            name: 'Coinone',
+            url: 'https://coinone.co.kr/'
+          },
+          {
+            name: 'HitBTC',
+            url: 'https://hitbtc.com/'
+          },
+          {
+            name: '库币网',
+            url: 'https://www.kucoin.com'
+          },
+          {
+            name: 'YoBit',
+            url: 'https://yobit.net'
+          },
+          {
+            name: '比特币交易网',
+            url: 'https://www.btctrade.tv/'
+          },
+          {
+            name: '酷币',
+            url: 'https://www.coolcoin.com/'
+          },
+          {
+            name: 'K网',
+            url: 'https://www.kex.com/'
+          },
+          {
+            name: 'COINNEST',
+            url: 'https://www.coinnest.co.kr/'
           }
         ]
       },
@@ -134,6 +214,34 @@ const Home = {
           {
             name: 'KCASH',
             url: 'https://www.kcash.com/'
+          },
+          {
+            name: 'POIM',
+            url: 'https://po.im'
+          },
+          {
+            name: 'Mist',
+            url: 'https://github.com/ethereum/mist/releases'
+          },
+          {
+            name: 'xapo',
+            url: 'https://xapo.com/'
+          },
+          {
+            name: 'EXODUS',
+            url: 'https://www.exodus.io/'
+          },
+          {
+            name: 'wirexapp',
+            url: 'https://wirexapp.com/'
+          },
+          {
+            name: 'Luno ',
+            url: 'https://www.luno.com/'
+          },
+          {
+            name: 'KeepKey ',
+            url: 'https://www.keepkey.com/'
           }
         ]
       },
@@ -167,6 +275,54 @@ const Home = {
           {
             name: '共享财经',
             url: 'http://www.gongxiangcj.com/'
+          },
+          {
+            name: '区块链之家',
+            url: 'http://www.5bite.com/'
+          },
+          {
+            name: '比特快讯',
+            url: 'https://www.bitnews.vip/'
+          },
+          {
+            name: 'HKS区块链',
+            url: 'http://hkstv.com.cn/qkl/'
+          },
+          {
+            name: '九个亿财经 ',
+            url: 'http://jgy.com/'
+          },
+          {
+            name: '链向财经',
+            url: 'https://www.chainfor.com/'
+          },
+          {
+            name: '动区动趋',
+            url: 'https://www.blocktempo.com/'
+          },
+          {
+            name: '币世界',
+            url: 'http://www.bishijie.com/kuaixun/'
+          },
+          {
+            name: '哈希财经',
+            url: 'http://www.hashcaijing.com/'
+          },
+          {
+            name: '比特头条',
+            url: 'http://www.bitett.com/portal.php'
+          },
+          {
+            name: '果味财经',
+            url: 'http://www.guower.com/'
+          },
+          {
+            name: '火讯财经',
+            url: 'http://huoxun.com/'
+          },
+          {
+            name: '比特币家园',
+            url: 'http://www.btc126.com/'
           }
         ]
       },
@@ -235,12 +391,77 @@ const Home = {
           {
             name: '达世币-DASH',
             url: 'https://www.dash.org/'
+          },
+          {
+            name: '波场-TRX',
+            url: 'https://tron.network/enindex.html'
+          },
+          {
+            name: '量子链-QTUM',
+            url: 'https://qtum.org/zh/'
+          },
+          {
+            name: '狗狗币-DOGE',
+            url: 'http://dogecoin.com/'
+          },
+          {
+            name: '比原链-BTM',
+            url: 'https://bytom.io/'
+          },
+          {
+            name: '路印-LRC',
+            url: 'https://loopring.org/en/index.html'
+          },
+          {
+            name: '嫩模币-OMG',
+            url: 'https://omg.omise.co/'
+          },
+          {
+            name: 'SNT',
+            url: 'https://status.im/'
           }
         ]
       },
       {
         name: '矿池挖矿',
-        content: []
+        content: [
+          {
+            name: '比特大陆',
+            url: 'https://www.bitmain.com/'
+          },
+          {
+            name: 'BitFury',
+            url: 'http://bitfury.com/'
+          },
+          {
+            name: '币信矿池',
+            url: 'https://haopool.com/home#!/poolHome'
+          },
+          {
+            name: 'BTC 矿池',
+            url: 'https://pool.btc.com/'
+          },
+          {
+            name: '蚂蚁矿池',
+            url: 'https://antpool.com/'
+          },
+          {
+            name: '星火矿池',
+            url: 'https://eth.sparkpool.com/'
+          },
+          {
+            name: '国池',
+            url: 'https://pool.btcc.com/'
+          },
+          {
+            name: '91pool',
+            url: 'http://www.91pool.com/'
+          },
+          {
+            name: 'F2Pool鱼池',
+            url: 'https://www.f2pool.com/'
+          }
+        ]
       }
     ],
     newsList: []

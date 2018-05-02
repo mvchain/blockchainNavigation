@@ -5,9 +5,13 @@ import App from './App';
 import 'element-ui/lib/theme-chalk/index.css';
 import ElementUI from 'element-ui';
 import store from './store';
+import * as filters from './filters'; // 全局filter
 Vue.config.productionTip = false;
 Vue.use(ElementUI);
 /* eslint-disable no-new */
+Object.keys(filters).forEach(key => {
+  Vue.filter(key, filters[key]);
+});
 new Vue({
   el: '#app',
   store,

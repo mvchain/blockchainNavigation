@@ -27,7 +27,7 @@
              v-for="(v, k) in coinList" :key="k">
           <span class="home-coin-item-name">{{v.name}}</span>
           <span class="home-coin-item-price"
-                :class="v.data.change_daily > 0 ? 'mag-up' : 'mag-down'">${{v.data.price}}</span>
+                :class="v.data.change_daily > 0 ? 'mag-up' : 'mag-down'">${{v.data.price | priceFilter}}</span>
           <span class="home-coin-item-mag" :class="v.data.change_daily > 0 ? 'mag-up' : 'mag-down'">{{(v.data.change_daily * 100).toFixed(2)}}%</span>
         </div>
       </div>
@@ -46,10 +46,10 @@
         <div class="section-container" v-for="(v, k) in blockList" :key="k">
           <div class="section-container-title">{{v.name}}</div>
           <div class="section-container-content">
-            <a  v-if="j < 23" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
+            <a  v-if="j < 24" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
               {{i.name}}
             </a>
-            <a  v-if="j >= 23 && showMore === k" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
+            <a  v-if="j >= 24 && showMore === k" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
               {{i.name}}
             </a>
           </div>
