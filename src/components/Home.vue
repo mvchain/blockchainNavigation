@@ -2,12 +2,11 @@
   <div class="home">
     <nav class="nav">
       <div class="nav-name">
-        <img style="margin-top:10px;" src="../assets/imgs/ttbtc-logo.png" alt="天天比特币logo logo TTBTC 标志 官网 小牛链 区块链 标识">
+        <img style="margin-top:20px;" src="../assets/imgs/TTBTC.png" alt="天天比特币logo logo TTBTC 标志 官网 小牛链 区块链 标识">
       </div>
       <div class="nav-button">
         <span>区块链导航</span>
         <span>丨</span>
-        <span @click="saveToDesktop('区块导航.html', 's')">保存到桌面</span>
         <span @click="collection">收藏本站</span>
       </div>
     </nav>
@@ -410,30 +409,10 @@
         window.open(`https://www.baidu.com/s?wd=${this.searchTxt}`);
       },
       collection() {
-        let title = '区块链导航';
-        let url = location.href;
-        try {
-          window.external.addFavorite(url, title);
-        } catch (e) {
-          try {
-            window.sidebar.addPanel(title, url, '');
-          } catch (e) {
-            alert('抱歉，您所使用的浏览器无法完成此操作。\n\n加入收藏失败，请使用Ctrl+D进行添加');
-          }
-        }
-      },
-      saveToDesktop(fileName, data) {
-        let explorer = navigator.userAgent.toLowerCase();
-        if (explorer.indexOf('trident') > 0) { // IE 5+
-          // let wss = new ActiveXObject('WScript.Shell');
-          // let desktopUrl = wss.SpecialFolders('Desktop');
-          // let fso = new ActiveXObject('Scripting.FileSystemObject');
-          // let tf = fso.CreateTextFile(desktopUrl + '\\' + fileName, true);
-          // tf.Write(data);
-          // tf.Close();
-        } else { // fireFox chrome
-          alert('抱歉，您所使用的浏览器无法完成此操作,请手动添加快捷方式至桌面');
-        }
+        this.$message({
+          showClose: true,
+          message: '请按下Ctrl+D来收藏本站'
+        });
       },
       innerSearchFun(b) {
         if (b === true) {
