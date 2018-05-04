@@ -14,10 +14,10 @@
         <img src="https://ss0.bdstatic.com/5aV1bjqh_Q23odCf/static/superman/img/logo_top_ca79a146.png">
       </div>
       <div class="home-search-input">
-        <input type="text" v-model="searchTxt">
+        <input type="text" v-model="searchTxt" @keydown.13="searchFun">
       </div>
       <div>
-        <span class="search-baidu" @click="searchFun">百度一下</span>
+        <span class="search-baidu" @click="searchFun" >百度一下</span>
         <span class="search-zn" @click="innerSearchFun(true)">站内搜索</span>
       </div>
     </div>
