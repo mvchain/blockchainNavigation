@@ -1,7 +1,9 @@
 <template>
   <div class="home">
     <nav class="nav">
-      <div class="nav-name">TTBTC</div>
+      <div class="nav-name">
+        <img style="margin-top:10px;" src="../assets/imgs/ttbtc-logo.png" alt="天天比特币logo logo TTBTC 标志 官网 小牛链 区块链 标识">
+      </div>
       <div class="nav-button">
         <span>区块链导航</span>
         <span>丨</span>
@@ -46,12 +48,26 @@
         <div class="section-container" v-for="(v, k) in blockList" :key="k">
           <div class="section-container-title">{{v.name}}</div>
           <div class="section-container-content">
-            <a  v-if="j < 24" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
-              {{i.name}}
-            </a>
-            <a  v-if="j >= 24 && showMore === k" target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in v.content" :key="j" :title="i.name">
-              {{i.name}}
-            </a>
+            <p v-if="j < 24 && k !== 3" v-for="(i, j) in v.content" :key="j">
+              <a   target="_blank" :href="i.url?i.url:'javascript:void(0);'"  :title="i.name">
+                {{i.name}}
+              </a>
+            </p>
+            <p v-if="j >= 24 && showMore === k && k !== 3" v-for="(i, j) in v.content" :key="j">
+              <a   target="_blank" :href="i.url?i.url:'javascript:void(0);'"  :title="i.name">
+                {{i.name}}
+              </a>
+            </p>
+            <p v-if="k === 3" v-for="(i, j) in v.content" :key="j">
+              <el-popover
+                placement="top-start"
+                trigger="hover"
+               >
+                <img :src="i.hover" alt="二维码">
+                <el-button class="code-style" slot="reference"> {{i.name}}</el-button>
+              </el-popover>
+
+            </p>
           </div>
           <div class="section-container-more">
             <el-button v-show="v.content.length >= 24" style="padding:4px 20px;" @click="moreHandler(k)">{{showMore === k ? '收起' : '更多'}}<i :class="showMore === k ? 'el-icon-arrow-up' : 'el-icon-arrow-down'" class="el-icon--down"></i></el-button>
@@ -313,15 +329,15 @@
         recommendList: [
           {
             name: '币安',
-            url: 'https://www.binance.com/clientDownloads.html'
+            url: 'https://www.binance.com/'
           },
           {
             name: '火币pro',
-            url: 'https://huobiglobal.zendesk.com/hc/zh-cn/articles/360002190292'
+            url: 'https://www.huobipro.com/'
           },
           {
             name: 'Gate.io',
-            url: 'https://gateio.io/mobileapp'
+            url: 'http://www.gateio.io/'
           },
           {
             name: 'OKEX',
@@ -337,15 +353,15 @@
           },
           {
             name: 'AICoin',
-            url: 'https://www.aicoin.net.cn/app'
+            url: 'http://www.aicoin.com/'
           },
           {
             name: '非小号',
-            url: 'https://www.feixiaohao.com/app/'
+            url: 'https://www.feixiaohao.com/'
           },
           {
             name: '巴比特',
-            url: 'http://download.8btc.com/'
+            url: 'http://www.8btc.com/'
           }
         ],
         nextNum: 10,
@@ -426,7 +442,7 @@
             this.blockList.forEach((v, k) => {
               if (v.content && v.content.length !== 0) {
                 v.content.forEach((i, j) => {
-                  if (i.name.indexOf(this.searchTxt) !== -1) {
+                  if ((i.name).toUpperCase().indexOf((this.searchTxt).toUpperCase()) !== -1) {
                     this.searchResult.push(i);
                     n++;
                   }

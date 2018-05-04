@@ -4,7 +4,7 @@
     <footer class="footer">
       <div class="footer-con">
         <div class="footer-con-top">
-          <div>TTBTC</div>
+          <div><img src="./assets/imgs/TTBTC.png" alt="foot"></div>
           <div>
             <img src="./assets/imgs/email.png" alt="email">
             <span>合作邮箱：ttbtc.cc@gmail.com</span>

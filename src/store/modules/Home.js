@@ -330,10 +330,32 @@ const Home = {
         name: '公众号',
         content: [
           {
-            name: '大炮评级'
+            name: '大炮评级',
+            hover: 'https://s17.postimg.cc/c8np1u83z/image.png'
           },
           {
-            name: '数字货币趋势狂人'
+            name: '数字货币趋势狂人',
+            hover: 'https://s17.postimg.cc/6yiqa0l4v/image.png'
+          },
+          {
+            name: '币圈早知道',
+            hover: 'https://s17.postimg.cc/kffosv8b3/zzd.png'
+          },
+          {
+            name: '比特天使',
+            hover: 'https://s17.postimg.cc/4tyd8x42n/image.png'
+          },
+          {
+            name: '每日币读',
+            hover: 'https://s17.postimg.cc/hlcjfeqpb/image.png'
+          },
+          {
+            name: '区块链大本营',
+            hover: 'https://s17.postimg.cc/hy3xllgov/clipboard.png'
+          },
+          {
+            name: '铅笔',
+            hover: 'https://s17.postimg.cc/56prf3u27/image.png'
           }
         ]
       },
