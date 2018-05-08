@@ -78,7 +78,9 @@
           <div class="section-container-title search-title">搜索【<span style="color: #1ca0f0">{{searchTxt}}</span>】结果：
           </div>
           <div class="section-container-content">
-            <a target="_blank" :href="i.url?i.url:'javascript:void(0);'" v-for="(i, j) in searchResult" :key="j" :title="i.name" v-show="searchResult.length !== 0">{{i.name}}</a>
+            <p v-for="(i, j) in searchResult" :key="j" :title="i.name" v-show="searchResult.length !== 0">
+              <a target="_blank" :href="i.url?i.url:'javascript:void(0);'" >{{i.name}}</a>
+            </p>
             <p style="margin: 0 auto;" v-show="searchResult.length === 0">未找到</p>
           </div>
         </div>
