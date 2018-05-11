@@ -45,6 +45,7 @@ const Home = {
     blockList: [
       {
         name: '交易所',
+        title: '交易所是用户买卖虚拟货币的网站，相当于股票市场。大部分交易所国内都无法直接访问',
         content: [
           {
             name: '币安',
@@ -162,6 +163,7 @@ const Home = {
       },
       {
         name: '数字钱包',
+        title: '数字钱包是个人用于存放自己虚拟货币资产的工具，相当于银行或者支付宝。不同钱包支持的虚拟货币种类有所不同',
         content: [
           {
             name: '比特派',
@@ -247,6 +249,7 @@ const Home = {
       },
       {
         name: '行情资讯',
+        title: '区块链行情资讯等内容的聚合类网站',
         content: [
           {
             name: '巴比特',
@@ -328,6 +331,7 @@ const Home = {
       },
       {
         name: '公众号',
+        title: '',
         content: [
           {
             name: '大炮评级',
@@ -361,6 +365,7 @@ const Home = {
       },
       {
         name: '币种',
+        title: '主流虚拟货币的官方网站',
         content: [
           {
             name: '比特币-BTC',
@@ -446,6 +451,7 @@ const Home = {
       },
       {
         name: '矿池挖矿',
+        title: '',
         content: [
           {
             name: '比特大陆',
