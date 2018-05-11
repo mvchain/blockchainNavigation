@@ -231,6 +231,12 @@
             name: '交易所',
             list: [
               {
+                title: 'Gate.io',
+                url: 'https://gateio.io/mobileapp',
+                des: '比特儿的海外版，通过C2C渠道完成法币入金出金，币种丰富',
+                src: 'https://s14.postimg.cc/d6ovzve29/gateio.io.png'
+              },
+              {
                 title: '币安',
                 url: 'https://www.binance.com/clientDownloads.html',
                 des: '国内交易量最大的平台，币种丰富。',
@@ -241,12 +247,6 @@
                 url: 'https://huobiglobal.zendesk.com/hc/zh-cn/articles/360002190292',
                 des: '通过C2C渠道完成 人民币入金出金，新币多。',
                 src: 'https://s14.postimg.cc/4offviztt/-_pro.png'
-              },
-              {
-                title: 'Gate.io',
-                url: 'https://gateio.io/mobileapp',
-                des: '比特儿的海外版，通过C2C渠道完成法币入金出金，币种丰富',
-                src: 'https://s14.postimg.cc/d6ovzve29/gateio.io.png'
               },
               {
                 title: 'OKEX',
@@ -413,16 +413,16 @@
         appIndex: 0,
         recommendList: [
           {
+            name: 'Gate.io',
+            url: 'http://www.gateio.io/'
+          },
+          {
             name: '币安',
             url: 'https://www.binance.com/'
           },
           {
             name: '火币pro',
             url: 'https://www.huobipro.com/'
-          },
-          {
-            name: 'Gate.io',
-            url: 'http://www.gateio.io/'
           },
           {
             name: 'OKEX',
