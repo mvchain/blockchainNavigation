@@ -48,16 +48,16 @@ const Home = {
         title: '交易所是用户买卖虚拟货币的网站，相当于股票市场。大部分交易所国内都无法直接访问',
         content: [
           {
+            name: 'Gate.io',
+            url: 'http://www.gateio.io/'
+          },
+          {
             name: '币安',
             url: 'https://www.binance.com/'
           },
           {
             name: '火币pro',
             url: 'https://www.huobipro.com/'
-          },
-          {
-            name: 'Gate.io',
-            url: 'http://www.gateio.io/'
           },
           {
             name: 'OKEX',
