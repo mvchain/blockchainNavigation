@@ -176,10 +176,9 @@
                   <img src="../assets/imgs/ex-register2.png" alt="">
                 </li>
                 <li class="marginsss">4. 点击“立即注册”后，邮箱会收到激活链接，点击邮件里的链接后注册成功</li>
-                <li class="marginsss">5. 登录账号后，进入“安全设置”页面，点击“手机绑定”，填写真实姓名，设置手机号（手机之后登录和交易会用到</li>
+                <li class="marginsss">5. 登录账号后，进入“安全设置”页面，点击“手机绑定”，填写真实姓名，设置手机号(手机之后登录和交易会用到)</li>
                 <li class="marginsss" style="margin-top:12px;padding-left:10px;"><img src="../assets/imgs/ex-vate.png" alt=""></li>
-                <li class="marginsss">6. 接着进行实名认证，同样是“安全设置”页面，选择“身份认证”，实名认证时必须填写真实信息，否则将影响之后的交易
-                  行为。（购买 USDT 之前，须先进行实名认证！否则无法购买！）
+                <li class="marginsss">6. 接着进行实名认证，同样是“安全设置”页面，选择“身份认证”，实名认证时必须填写真实信息，否则将影响之后的交易行为。（购买 USDT 之前，须先进行实名认证！否则无法购买！）
                 </li>
                 <li class="marginsss" style="margin-top:12px;padding-left:10px;"><img src="../assets/imgs/ex-id.png" alt=""></li>
                 <li class="marginsss">7. 实名认证成功后即可进入 C2C 交易区购买 USDT。在买入USDT区域，输入您希望购买的USDT数量，金额CNY处会显示所
