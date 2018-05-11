@@ -195,8 +195,8 @@
               </ul>
             </div>
           </div>
-          <div v-show="sectionNum===1" class="new-container-content-right">
-            <a  class="marginsss-a"  target="_blank" href="https://www.cmcmbc.com/zh-cn/safe-wallet/support/">https://www.cmcmbc.com/zh-cn/safe-wallet/support/</a>
+          <div v-show="sectionNum===1" class="new-container-content-right">常见问题解答链接：
+            <a class="marginsss-a"  target="_blank" href="https://www.cmcmbc.com/zh-cn/safe-wallet/support/">https://www.cmcmbc.com/zh-cn/safe-wallet/support/</a>
           </div>
         </div>
         <div class="new-container-footer">
