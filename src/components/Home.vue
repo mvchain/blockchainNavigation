@@ -5,7 +5,8 @@
         <img style="margin-top:20px;" src="../assets/imgs/TTBTC.png" alt="天天比特币logo logo TTBTC 标志 官网 小牛链 区块链 标识">
       </div>
       <div class="nav-button">
-        <span @click="sectionFlag = !sectionFlag">{{sectionFlag ? '首页' : '新手答疑'}}</span>
+        <span @click="sectionFlag = false">首页</span>
+        <span @click="sectionFlag = true">新手入门</span>
         <span>丨</span>
         <span @click="collection">收藏本站</span>
       </div>
@@ -147,28 +148,18 @@
     </section>
     <section v-show="sectionFlag" class="section contain-style">
       <div class="new-con">
-        <div class="new-container-title">新手答疑
-
-          <el-popover
-            placement="bottom-start"
-            width="200"
-            popper-class="popover-style"
-            trigger="hover"
-            content="数字钱包是个人用于存放自己虚拟货币资产的工具，相当于银行或者支付宝。不同钱包支持的虚拟货币种类有所不同。">
-            <el-button  slot="reference" style="color:#909090;padding:0;border:0;" class="el-icon-question">
-              <i class=""></i>
-            </el-button>
-          </el-popover>
-
+        <div class="new-container-title">新手入门
         </div>
         <div class="new-container-content">
           <div class="new-container-content-left">
             <ul>
-              <li class="new-container-content-btn active"><span>如何使用RMB购买数字货币</span><i style="float:right;" class="el-icon-arrow-right"></i></li>
-              <li class="new-container-content-btn"><a target="_blank" style="font-weight:900" href="https://www.cmcmbc.com/zh-cn/safe-wallet/support/">数字钱包常见问题解答</a><i style="float:right;" class="el-icon-arrow-right"></i></li>
+              <li v-for="(v, k) in sectionList" :key="k" :class="sectionNum===k&&'active'" class="new-container-content-btn" @click="sectionNum = k">
+                <span>{{v.title}}</span><i style="float:right;" class="el-icon-arrow-right"></i>
+              </li>
+
             </ul>
           </div>
-          <div class="new-container-content-right">
+          <div v-show="sectionNum===0" class="new-container-content-right">
             <div class="new-container-content-right-title">如何使用RMB购买数字货币</div>
             <div class="new-container-content-right-content">
               <ul>
@@ -194,16 +185,23 @@
                 <li class="marginsss">7. 实名认证成功后即可进入 C2C 交易区购买 USDT。在买入USDT区域，输入您希望购买的USDT数量，金额CNY处会显示所
                   需支付的金额。点击买入后，系统会自动匹配USDT的卖家，您给卖家的银行账户/微信/支付宝 转账所需金额（给卖家转账，
                   请务必正确输入付款金额，否则会出现不必要的麻烦或损失！），卖家可能需要几分钟来确认收到的款项，之后平台会释放替
-                  您保存的USDT，整个过程由平台方作为第三方担保，交易过程是很安全的。
-                  Gate.io C2C交易操作说明：<a style="color:#1ca0f0" target="_blank" href="https://gateio.io/help/help_2C2?help_2C2_sm">https://gateio.io/help/help_2C2?help_2C2_sm</a></li>
+                  您保存的USDT，整个过程由平台方作为第三方担保，交易过程是很安全的。<br/>
+                  Gate.io C2C交易操作说明：<a class="marginsss-a"  target="_blank" href="https://gateio.io/help/help_2C2?help_2C2_sm">https://gateio.io/help/help_2C2?help_2C2_sm</a></li>
                 <li class="marginsss">
                   <img src="../assets/imgs/ex-buy.png" alt="">
                 </li>
                 <li class="marginsss">8.  购买 USDT 之后，即可进入“币币交易”购买您喜爱的虚拟货币了。</li>
-                <li>如有更多疑问，可以查看Gate.io官方帮助页面： <a style="color:#1ca0f0" target="_blank" href="https://gateio.io/help">https://gateio.io/help</a></li>
+                <li>如有更多疑问，可以查看Gate.io官方帮助页面： <a class="marginsss-a"  target="_blank" href="https://gateio.io/help">https://gateio.io/help</a></li>
               </ul>
             </div>
           </div>
+          <div v-show="sectionNum===1" class="new-container-content-right">
+            <a  class="marginsss-a"  target="_blank" href="https://www.cmcmbc.com/zh-cn/safe-wallet/support/">https://www.cmcmbc.com/zh-cn/safe-wallet/support/</a>
+          </div>
+        </div>
+        <div class="new-container-footer">
+          <p><span>温馨提醒：</span>数字货币的交易存在很大风险，在全球范围内一周7天，一天24小时无休止交易，没有每日涨停跌停限制，受到新闻事</p>
+          <p>件，各国政策，市场需求等多种因素影响，价格浮动很大。建议大家在自身所能承受的风险范围内参与交易。</p>
         </div>
       </div>
     </section>
@@ -217,7 +215,16 @@
     name: 'Home',
     data() {
       return {
+        sectionList: [
+          {
+            title: '如何使用RMB购买数字货币'
+          },
+          {
+            title: '数字钱包常见问题解答'
+          }
+        ],
         sectionFlag: false,
+        sectionNum: 0,
         popoverKey: '',
         popover1: false,
         appList: [

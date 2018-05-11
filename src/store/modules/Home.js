@@ -331,7 +331,7 @@ const Home = {
       },
       {
         name: '公众号',
-        title: '',
+        title: '通过关注公众号可随时随地了解到各类行情分析，事件分析以及交易教程等干货内容',
         content: [
           {
             name: '大炮评级',
@@ -451,7 +451,7 @@ const Home = {
       },
       {
         name: '矿池挖矿',
-        title: '',
+        title: '可购买各类虚拟货币实体矿机或虚拟云矿机。',
         content: [
           {
             name: '比特大陆',
