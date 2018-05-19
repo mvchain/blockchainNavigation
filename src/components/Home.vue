@@ -229,226 +229,23 @@
         appList: [
           {
             name: '交易所',
-            list: [
-              {
-                title: 'Gate.io',
-                url: 'https://gateio.io/mobileapp',
-                des: '比特儿的海外版，通过C2C渠道完成法币入金出金，币种丰富',
-                src: 'https://s14.postimg.cc/d6ovzve29/gateio.io.png'
-              },
-              {
-                title: '币安',
-                url: 'https://www.binance.com/clientDownloads.html',
-                des: '国内交易量最大的平台，币种丰富。',
-                src: 'https://s7.postimg.cc/76gyjiad7/bian.png'
-              },
-              {
-                title: '火币pro',
-                url: 'https://huobiglobal.zendesk.com/hc/zh-cn/articles/360002190292',
-                des: '通过C2C渠道完成 人民币入金出金，新币多。',
-                src: 'https://s14.postimg.cc/4offviztt/-_pro.png'
-              },
-              {
-                title: 'OKEX',
-                url: 'https://www.okex.com/',
-                des: '通过C2C渠道完成 人民币入金出金',
-                src: 'https://s7.postimg.cc/tiercy6x7/okex.png'
-              },
-              {
-                title: 'CoinEgg',
-                url: 'https://www.coinegg.com/',
-                des: '聚币网的海外版站点',
-                src: 'https://s7.postimg.cc/qbk7t91vv/coinegg.png'
-              },
-              {
-                title: 'CoinCola',
-                url: 'https://www.coincola.com/',
-                des: '一个不涉及第三方的P2P交易平台，交易过程方便快捷',
-                src: 'https://s7.postimg.cc/gr0l6d4u3/coincola.png'
-              }
-            ]
+            list: []
           },
           {
             name: '数字钱包',
-            list: [
-              {
-                title: '比特派',
-                url: 'http://bitpie.com/',
-                des: '多币种钱包，支持主流币种，内置OTC及交易所',
-                src: 'https://s7.postimg.cc/646s0x1tn/bitepai.png'
-              },
-              {
-                title: 'imToken',
-                url: 'https://token.im/',
-                des: '最好用的以太系钱包之一，支持ETH、ERC20代币。',
-                src: 'https://s7.postimg.cc/9b1bkmmaj/imtoken.png'
-              },
-              {
-                title: '火币钱包',
-                url: 'https://www.huobi.io/',
-                des: '火币官方钱包，支持各大主流币种。',
-                src: 'https://s7.postimg.cc/ivky7i3wr/huobiwallet.png'
-              },
-              {
-                title: '币信',
-                url: 'https://bixin.com/',
-                des: '集钱包、社交、行情、交易于一身的数字货币钱包',
-                src: 'https://s7.postimg.cc/xrjhf0uq3/bixin.png'
-              },
-              {
-                title: 'SafeWallet ',
-                url: 'https://www.cmcmbc.com/zh-cn/safe-wallet/',
-                des: '猎豹移动出品的数字货币钱包，支持主流数字货币',
-                src: 'https://s7.postimg.cc/va7q7uxzv/safewallet.png'
-              },
-              {
-                title: 'Copay ',
-                url: 'https://copay.io/',
-                des: '支持多重签名的开源数字钱包',
-                src: 'https://s14.postimg.cc/hftm211w1/image.png'
-              },
-              {
-                title: 'Jaxx ',
-                url: 'https://jaxx.io/',
-                des: '支持全平台的多币种数字资产钱包应用',
-                src: 'https://s14.postimg.cc/wojjftqfl/-jaxx.png'
-              },
-              {
-                title: 'BlockChain',
-                url: 'https://blockchain.info/wallet/#/',
-                des: '全球最早且受欢迎的数字钱包之一',
-                src: 'https://s7.postimg.cc/x20p2o9m3/blockchain.png'
-              },
-              {
-                title: 'BitPay',
-                url: 'https://bitpay.com/',
-                des: '最大的数字货币支付钱包软件之一',
-                src: 'https://s14.postimg.cc/6g8eqf3r5/bitepai.png'
-              },
-              {
-                title: 'CoinMeet',
-                url: 'https://coinmeet.io/',
-                des: '集多资产轻钱包，区块链护照，数字社交等功能的软件',
-                src: 'https://s7.postimg.cc/6gy673ziz/Cion_Meet.png'
-              }
-            ]
+            list: []
           },
           {
             name: '行情资讯',
-            list: [
-              {
-                title: 'AICoin ',
-                url: 'https://www.aicoin.net.cn/app',
-                des: '专业的全球数字资产行情数据应用',
-                src: 'https://s7.postimg.cc/i625v1g6z/aicoin.png'
-              },
-              {
-                title: '非小号',
-                url: 'https://www.feixiaohao.com/app/',
-                des: '专业的数字货币行业大数据平台',
-                src: 'https://s7.postimg.cc/646s0z6zf/feixiaohao.png'
-              },
-              {
-                title: 'MyToken',
-                url: 'https://mytoken.io/',
-                des: '数字资产行情应用',
-                src: 'https://s7.postimg.cc/i625v5qij/mytoken.png'
-              },
-              {
-                title: 'BITKAN',
-                url: 'http://www.bitkan.com/app',
-                des: '提供价格监控、新闻资讯、挖矿监控、股票监控、钱包等服务',
-                src: 'https://s7.postimg.cc/l05b8hxsr/bikan.png'
-              },
-              {
-                title: '金色财经',
-                url: 'https://www.jinse.com/',
-                des: '专注于区块链产业的服务平台，通过深度报道，传递行业声音。',
-                src: 'https://s7.postimg.cc/mf6vxabrf/gold.png'
-              },
-              {
-                title: '巴比特',
-                url: 'http://download.8btc.com/',
-                des: '国内最早的区块链资讯社区门户',
-                src: 'https://s7.postimg.cc/qoblzduff/babite.png'
-              },
-              {
-                title: '未来财经',
-                url: 'http://www.weilaicaijing.com/',
-                des: '领先的区块链垂直网络媒体平台',
-                src: 'https://s7.postimg.cc/lcwpetdjf/weilai.png'
-              }
-            ]
+            list: []
           },
           {
             name: '其他',
-            list: [
-              {
-                title: 'Dapp',
-                url: 'https://www.cmcmbc.com/zh-cn/dapp-browser/',
-                des: '在线区块链应用专用浏览器',
-                src: 'https://s7.postimg.cc/88r521lgr/dappbrowser.png'
-              },
-              {
-                title: '蓝灯',
-                url: 'https://github.com/getlantern/lantern/releases/tag/latest',
-                des: '你可能很需要它',
-                src: 'https://s7.postimg.cc/5rfduutvf/VPN.png'
-              },
-              {
-                title: 'Telegram ',
-                url: 'https://telegram.org/',
-                des: '全球最安全的社交即时通讯软件',
-                src: 'https://s14.postimg.cc/4offvjf9d/telegram.png'
-              },
-              {
-                title: 'BeeChat ',
-                url: 'http://beechat.io/',
-                des: '专注于区块链的即时通讯软件',
-                src: 'https://s18.postimg.cc/6e14frd7d/beechat.png'
-              }
-            ]
+            list: []
           }
         ],
         appIndex: 0,
-        recommendList: [
-          {
-            name: 'Gate.io',
-            url: 'http://www.gateio.io/'
-          },
-          {
-            name: '币安',
-            url: 'https://www.binance.com/'
-          },
-          {
-            name: '火币pro',
-            url: 'https://www.huobipro.com/'
-          },
-          {
-            name: 'OKEX',
-            url: 'https://www.okex.com/'
-          },
-          {
-            name: '比特派',
-            url: 'http://bitpie.com/'
-          },
-          {
-            name: 'imToken',
-            url: 'https://token.im/'
-          },
-          {
-            name: 'AICoin',
-            url: 'http://www.aicoin.com/'
-          },
-          {
-            name: '非小号',
-            url: 'https://www.feixiaohao.com/'
-          },
-          {
-            name: '巴比特',
-            url: 'http://www.8btc.com/'
-          }
-        ],
+        recommendList: [],
         nextNum: 10,
         showFlag: false,
         searchTxt: '',
@@ -461,12 +258,66 @@
       ...mapGetters({
         coinList: 'coinList',
         blockList: 'blockList',
-        newsList: 'newsList'
+        newsList: 'newsList',
+        transactionApp: 'transactionApp',
+        wallet: 'wallet',
+        information: 'information',
+        other: 'other',
+        coin: 'coin',
+        information2: 'information2',
+        mine: 'mine',
+        noPublic: 'noPublic',
+        recommend: 'recommend',
+        transactionCenter2: 'transactionCenter2',
+        wallet2: 'wallet2'
       })
     },
     mounted() {
       setInterval(this.scroll, 3000);
       this.$store.dispatch('getNews');
+      this.$store.dispatch('getList', {title: 'SET_APP_CENTER', str: 'transactionApp'}).then(() => {
+        this.appList[0].list = this.transactionApp;
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_WALLET_APP', str: 'wallet'}).then(() => {
+          this.appList[1].list = this.wallet;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_INFORMATION_APP', str: 'information'}).then(() => {
+          this.appList[2].list = this.information;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_OTHER_APP', str: 'other'}).then(() => {
+          this.appList[3].list = this.other;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_RECOMMEND_APP', str: 'recommend'}).then(() => {
+          this.recommendList = this.recommend;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_TRANSACTION_CENTER', str: 'transactionCenter2'}).then(() => {
+          this.blockList[0].content = this.transactionCenter2;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_WALLET_WEB', str: 'wallet2'}).then(() => {
+          this.blockList[1].content = this.wallet2;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_INFORMATION_WEB', str: 'information2'}).then(() => {
+          this.blockList[2].content = this.information2;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_NO_PUBLIC', str: 'noPublic'}).then(() => {
+          this.blockList[3].content = this.noPublic;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_COIN_WEB', str: 'coin'}).then(() => {
+          this.blockList[4].content = this.coin;
+        }).catch();
+      }).then(() => {
+        this.$store.dispatch('getList', {title: 'SET_MINE_WEB', str: 'mine'}).then(() => {
+          this.blockList[5].content = this.mine;
+        }).catch();
+      }).catch();
     },
     watch: {
       searchTxt: 'innerSearchFun'

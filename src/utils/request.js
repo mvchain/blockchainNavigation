@@ -1,47 +1,69 @@
 import axios from 'axios'
 import { Message } from 'element-ui'
+import store from '../store'
+import { getToken } from '@/utils/auth'
 
 // 创建axios实例
 axios.defaults.withCredentials = true
 const service = axios.create({
-  baseURL: 'https://data.block.cc', // api的base_url
+  baseURL: window.urlData.url, // api的base_url
   timeout: 15000 // 请求超时时间
 })
+// request拦截器
 service.interceptors.request.use(config => {
-  console.log(config)
-return config
+  return config
 }, error => {
   // Do something with request error
   Promise.reject(error)
 })
+
 // respone拦截器
-service.interceptors.response.use((response) => {
-  /**
-  * code为非20000是抛错 可结合自己业务进行修改
-  */
+service.interceptors.response.use(
+  response => {
+    /**
+     * code为非20000是抛错 可结合自己业务进行修改
+     */
 
     const res = response.data
-  console.log(res)
+    if ((response.request.responseURL.indexOf('/transaction/collect/json') !== -1) ||
+      (response.request.responseURL.indexOf('/transaction/transaction/json') !== -1)||
+      (response.request.responseURL.indexOf('/transaction/all/json') !== -1)) {
+      return response
+    }
     if (res.status !== 200) {
       Message({
         message: res.data,
         type: 'error',
         duration: 5 * 1000
-      });
+      })
 
-      return Promise.reject()
+      return Promise.reject('网络错误')
     } else {
       return response.data
     }
   },
-  (error) => {
-    //  50014:Token 过期了;50015,长的
+  error => {
     Message({
-      message: error.message,
+      message: error.response.data.message,
       type: 'error',
       duration: 5 * 1000
-    });
-    return Promise.reject()
+    })
+    //  50014:Token 过期了;50015,长的
+    if (error.response.data.status === 50014) {
+      store.dispatch('getReferToken').then(() => {
+        window.location.reload()
+      }).catch()
+    } else if (error.response.data.status === 50015) {
+      store.dispatch('FedLogOut').then(() => {
+        location.reload()// 为了重新实例化vue-router对象 避免bug
+        Message({
+          message: '账号过期，请重新登录',
+          type: 'error',
+          duration: 5 * 1000
+        })
+      })
+    }
+    return Promise.reject(error.response.data.message)
   }
 )
 
