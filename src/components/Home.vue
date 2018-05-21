@@ -76,7 +76,7 @@
                 placement="bottom-start"
                 trigger="hover"
                >
-                <img :src="i.hover" alt="二维码">
+                <img :src="i.url" alt="二维码">
                 <el-button class="code-style" slot="reference"> {{i.name}}</el-button>
               </el-popover>
 
