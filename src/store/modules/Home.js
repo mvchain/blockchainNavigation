@@ -133,9 +133,11 @@ const Home = {
     getCointList: ({commit, state}, payload) => {
       state.coinList.forEach((k, v) => {
         const url = 'https://data.block.cc/api/v1/price?symbol=' + k.url;
-        window.$.get(url, {
+        window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
+          q: `select * from json where url="${url}"`,
+          format: 'json'
         }).then(function (res) {
-          state.coinList[v].data = res.data[0];
+          state.coinList[v].data = res.query.results.json.data;
         }).catch();
       });
     },
