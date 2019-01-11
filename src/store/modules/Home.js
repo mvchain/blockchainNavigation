@@ -1,5 +1,5 @@
-import { projectList } from '@/api/index';
-
+import {projectList} from '@/api/index';
+import axios from 'axios';
 const Home = {
   state: {
     coinList: [
@@ -131,26 +131,41 @@ const Home = {
 
   actions: {
     getCointList: ({commit, state}, payload) => {
+      let tokenName = [];
       state.coinList.forEach((k, v) => {
-        const url = 'https://data.block.cc/api/v1/price?symbol=' + k.url;
-        window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
-          q: `select * from json where url="${url}"`,
-          format: 'json'
-        }).then(function (res) {
-          state.coinList[v].data = res.query.results.json.data;
-        }).catch();
+        tokenName.push(k.url);
+      });
+      let url = `https://data.block.cc/api/v1/price?symbol=${tokenName.toString()}`;
+      window.fetch(url, {method: 'GET', mode: 'cors'}).then((res) => {
+        return res.json();
+      }).then((res) => {
+        res.data.forEach((v) => {
+          state.coinList.forEach((m) => {
+            if (m.url === v.symbol) {
+              m.data = v;
+            }
+          });
+        });
+      }).catch(() => {
       });
     },
     getNews: ({commit, state}, payload) => {
-      const url = 'http://www.bishijie.com/api/newsv17/index?size=30&client=pc';
-      window.$.getJSON('http://query.yahooapis.com/v1/public/yql', {
-        q: `select * from json where url="${url}"`,
-        format: 'json'
-      }).then(function (res) {
-        if (res.query) {
-          state.newsList = res.query.results.json.data;
-        }
-      }).catch();
+      axios.get('/api/newsv17/index?size=30&client=pc', {
+        method: 'GET'
+        }).then((res) => {
+        console.log(res);
+      }).then((res) => {
+      }).catch(() => {
+      });
+      // window.$.ajax({
+      //   url: 'http://query.yahooapis.com/v1/public/yql',
+      //   data: {
+      //     q: `select * from rss where url="http://www.bishijie.com/api/newsv17/index?size=30&client=pc"`
+      //   },
+      //   success: function (d) {
+      //     console.log(JSON.stringify(d));
+      //   }
+      // });
     },
     getList: ({commit, state}, payload) => {
       return new Promise((resolve, reject) => {
